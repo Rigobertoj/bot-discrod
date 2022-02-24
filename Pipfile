@@ -10,3 +10,29 @@ name = "pypi"
 
 [requires]
 python_version = "3.9"
+
+codigo de un bot de python
+
+bot = commands.Bot(command_prefix='>', description="this is a helper bot")
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
+
+#events
+
+@bot.event
+async def on_ready():
+    await bot.change_presence(activity=discord.Streaming(name="Admin"))
+    print("Bot is ready ")
+
+bot.run('OTQ1NzQ3ODk5MzQ4ODE5OTg5.YhUqXg.TR5sRcr6bkTt4qRJ4RUwvAYQJ7w')
+
+busquedas de youtube con python
+
+    query_string = parse.urlencode({'search_query': search})
+    content = request.urlopen('http://www.youtube.com/results?' + query_string)
+    search = re.findall('href=\"\\/watch\\?v=(.{11})',content.read().decode() )
+    print(search)
+
+    await ctx.send('http://www.youtube.com/watch?v=' +search[0])
